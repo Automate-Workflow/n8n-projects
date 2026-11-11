@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="24" viewBox="0 0 800 24" role="img" aria-labelledby="divider-title divider-desc">
+  <title id="divider-title">Section Divider</title>
+  <desc>Thin red horizontal divider line with a central workflow node.</desc>
+  <defs>
+    <linearGradient id="div-line" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DC2626" stop-opacity="0.1" />
+      <stop offset="25%" stop-color="#DC2626" stop-opacity="0.7" />
+      <stop offset="50%" stop-color="#B91C1C" stop-opacity="1" />
+      <stop offset="75%" stop-color="#DC2626" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#DC2626" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+
+  <line x1="16" y1="12" x2="784" y2="12" stroke="url(#div-line)" stroke-width="2" stroke-linecap="round" />
+  <circle cx="376" cy="12" r="3" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5" />
+  <circle cx="424" cy="12" r="3" fill="#FEE2E2" stroke="#DC2626" stroke-width="1.5" />
+  <circle cx="400" cy="12" r="7" fill="#FFFFFF" stroke="#B91C1C" stroke-width="2.5" />
+  <circle cx="400" cy="12" r="2.5" fill="#DC2626" />
+</svg>

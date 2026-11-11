@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="152" height="20" viewBox="0 0 152 20" role="img" aria-labelledby="badge-int-title badge-int-desc">
+  <title id="badge-int-title">Difficulty: Intermediate</title>
+  <desc id="badge-int-desc">Shield badge showing Intermediate difficulty in bright red.</desc>
+  <clipPath id="clip-int">
+    <rect width="152" height="20" rx="4" />
+  </clipPath>
+  <g clip-path="url(#clip-int)">
+    <rect width="64" height="20" fill="#111827" />
+    <rect x="64" width="88" height="20" fill="#DC2626" />
+  </g>
+  <g font-family="Verdana, Geneva, DejaVu Sans, sans-serif" font-size="11" text-anchor="middle">
+    <text x="32" y="14" fill="#FFFFFF">difficulty</text>
+    <text x="108" y="14" fill="#FFFFFF" font-weight="700">intermediate</text>
+  </g>
+</svg>

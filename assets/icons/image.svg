@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="icon-image-title icon-image-desc">
+  <title id="icon-image-title">Image Generation and Processing Icon</title>
+  <desc id="icon-image-desc">Stylized photo frame containing geometric peaks, sun, and sparkle node in red on a white tile.</desc>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#FFFFFF" stroke="#FEE2E2" stroke-width="2" />
+  <g fill="none" stroke="#B91C1C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="14" y="16" width="36" height="32" rx="5" fill="#FEE2E2" fill-opacity="0.35" />
+    <circle cx="24" cy="26" r="3.5" fill="#FFFFFF" stroke="#DC2626" />
+    <path d="M 16 43 L 26 33 L 33 40 L 40 31 L 48 43" fill="#FFFFFF" fill-opacity="0.6" />
+    <path d="M 46 13 L 46 19 M 43 16 L 49 16" stroke="#DC2626" />
+  </g>
+</svg>

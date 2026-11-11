@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" role="img" aria-labelledby="badge-lic-title badge-lic-desc">
+  <title id="badge-lic-title">License: MIT</title>
+  <desc id="badge-lic-desc">Shield badge indicating MIT license.</desc>
+  <clipPath id="clip-lic">
+    <rect width="92" height="20" rx="4" />
+  </clipPath>
+  <g clip-path="url(#clip-lic)">
+    <rect width="54" height="20" fill="#111827" />
+    <rect x="54" width="38" height="20" fill="#B91C1C" />
+  </g>
+  <g font-family="Verdana, Geneva, DejaVu Sans, sans-serif" font-size="11" text-anchor="middle">
+    <text x="27" y="14" fill="#FFFFFF">license</text>
+    <text x="73" y="14" fill="#FFFFFF" font-weight="700">MIT</text>
+  </g>
+</svg>

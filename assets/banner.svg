@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="banner-title banner-desc">
+  <title id="banner-title">Automate Workflow n8n-projects Banner</title>
+  <desc id="banner-desc">Dark red gradient repository banner for n8n-projects featuring connected workflow nodes and the tagline Curated n8n projects to learn production automation.</desc>
+  <defs>
+    <linearGradient id="banner-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7F1D1D" />
+      <stop offset="55%" stop-color="#B91C1C" />
+      <stop offset="100%" stop-color="#7F1D1D" />
+    </linearGradient>
+    <linearGradient id="node-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DC2626" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#7F1D1D" stop-opacity="0.1" />
+    </linearGradient>
+    <pattern id="subtle-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="320" rx="16" fill="url(#banner-bg)" />
+  <rect width="1200" height="320" rx="16" fill="url(#subtle-grid)" />
+
+  <!-- Decorative radial shapes -->
+  <circle cx="980" cy="160" r="190" fill="url(#node-glow)" />
+  <circle cx="1090" cy="60" r="90" fill="#DC2626" fill-opacity="0.18" />
+
+  <!-- Left text block -->
+  <g font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+    <rect x="68" y="58" width="210" height="30" rx="15" fill="#7F1D1D" stroke="#FEE2E2" stroke-opacity="0.45" stroke-width="1.2" />
+    <circle cx="88" cy="73" r="4" fill="#FEE2E2" />
+    <text x="102" y="78" fill="#FEE2E2" font-size="12.5" font-weight="700" letter-spacing="1.6">AUTOMATE WORKFLOW</text>
+
+    <text x="68" y="158" fill="#FFFFFF" font-size="60" font-weight="800" letter-spacing="-0.8">n8n-projects</text>
+    <text x="68" y="204" fill="#FEE2E2" font-size="22" font-weight="400">Curated n8n projects to learn production automation</text>
+
+    <rect x="68" y="238" width="96" height="6" rx="3" fill="#FFFFFF" />
+    <rect x="172" y="238" width="44" height="6" rx="3" fill="#FEE2E2" fill-opacity="0.7" />
+    <rect x="224" y="238" width="16" height="6" rx="3" fill="#DC2626" />
+  </g>
+
+  <!-- Right abstract workflow node-and-connector motif -->
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Connectors -->
+    <path d="M 756 160 C 796 160, 796 96, 836 96" stroke="#FEE2E2" stroke-width="2.5" stroke-opacity="0.85" />
+    <path d="M 756 160 C 796 160, 796 224, 836 224" stroke="#FFFFFF" stroke-width="2.5" />
+    <path d="M 936 96 C 976 96, 976 160, 1016 160" stroke="#FEE2E2" stroke-width="2.5" stroke-opacity="0.85" />
+    <path d="M 936 224 C 976 224, 976 160, 1016 160" stroke="#FFFFFF" stroke-width="2.5" />
+    <path d="M 936 96 L 1044 96" stroke="#FEE2E2" stroke-width="2" stroke-dasharray="5 5" stroke-opacity="0.65" />
+    <path d="M 1096 160 L 1136 160" stroke="#FEE2E2" stroke-width="2.5" stroke-opacity="0.75" />
+
+    <!-- Trigger node -->
+    <rect x="676" y="128" width="80" height="64" rx="14" fill="#7F1D1D" stroke="#FFFFFF" stroke-width="2.5" />
+    <circle cx="716" cy="160" r="13" fill="#FEE2E2" fill-opacity="0.2" stroke="#FFFFFF" stroke-width="2" />
+    <path d="M 712 153 L 724 160 L 712 167 Z" fill="#FFFFFF" />
+    <circle cx="756" cy="160" r="4.5" fill="#FFFFFF" />
+
+    <!-- Upper branch node -->
+    <rect x="836" y="64" width="100" height="64" rx="14" fill="#7F1D1D" stroke="#FEE2E2" stroke-width="2.2" />
+    <line x1="856" y1="88" x2="916" y2="88" stroke="#FFFFFF" stroke-width="2.5" />
+    <line x1="856" y1="104" x2="896" y2="104" stroke="#FEE2E2" stroke-width="2.5" stroke-opacity="0.8" />
+    <circle cx="836" cy="96" r="4" fill="#FEE2E2" />
+    <circle cx="936" cy="96" r="4" fill="#FEE2E2" />
+
+    <!-- Lower branch node -->
+    <rect x="836" y="192" width="100" height="64" rx="14" fill="#B91C1C" stroke="#FFFFFF" stroke-width="2.5" />
+    <circle cx="862" cy="224" r="10" fill="#FEE2E2" />
+    <line x1="882" y1="217" x2="918" y2="217" stroke="#FFFFFF" stroke-width="2.5" />
+    <line x1="882" y1="231" x2="910" y2="231" stroke="#FEE2E2" stroke-width="2.5" />
+    <circle cx="836" cy="224" r="4.5" fill="#FFFFFF" />
+    <circle cx="936" cy="224" r="4.5" fill="#FFFFFF" />
+
+    <!-- Output aggregation node -->
+    <rect x="1016" y="128" width="80" height="64" rx="14" fill="#FFFFFF" stroke="#FEE2E2" stroke-width="2.5" />
+    <path d="M 1044 160 L 1053 169 L 1070 151" stroke="#B91C1C" stroke-width="3.5" />
+    <circle cx="1016" cy="160" r="4.5" fill="#DC2626" stroke="#FFFFFF" stroke-width="1.5" />
+    <circle cx="1096" cy="160" r="4.5" fill="#DC2626" stroke="#FFFFFF" stroke-width="1.5" />
+
+    <!-- Secondary upper terminal node -->
+    <rect x="1044" y="76" width="60" height="40" rx="10" fill="#7F1D1D" stroke="#FEE2E2" stroke-width="2" stroke-opacity="0.85" />
+    <circle cx="1074" cy="96" r="6" fill="#FEE2E2" />
+  </g>
+</svg>

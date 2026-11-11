@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="186" height="20" viewBox="0 0 186 20" role="img" aria-labelledby="badge-p3-title badge-p3-desc">
+  <title id="badge-p3-title">Phase 3: Documents, Vision and Data</title>
+  <desc id="badge-p3-desc">Shield badge for Learning Phase 3 Documents, Vision and Data.</desc>
+  <clipPath id="clip-p3">
+    <rect width="186" height="20" rx="4" />
+  </clipPath>
+  <g clip-path="url(#clip-p3)">
+    <rect width="56" height="20" fill="#111827" />
+    <rect x="56" width="130" height="20" fill="#B91C1C" />
+  </g>
+  <g font-family="Verdana, Geneva, DejaVu Sans, sans-serif" font-size="11" text-anchor="middle">
+    <text x="28" y="14" fill="#FFFFFF">phase 3</text>
+    <text x="121" y="14" fill="#FFFFFF" font-weight="700">Docs, Vision &amp; Data</text>
+  </g>
+</svg>
