@@ -1,0 +1,97 @@
+name: Docs and Asset Integrity
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-docs-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify-docs:
+    name: Verify Docs, Links, SVGs, and Policy Rules
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.13"
+
+      - name: Verify generated docs match CSV
+        run: python scripts/build_readme.py --check
+
+      - name: Verify SVG assets, relative Markdown links, and no-emoji rule
+        run: |
+          python - <<'PY'
+          import pathlib
+          import re
+          import sys
+          import xml.etree.ElementTree as ET
+
+          root = pathlib.Path(".").resolve()
+          errors: list[str] = []
+
+          # 1. Verify all SVG files parse cleanly with title, desc, width, height
+          ns = {"svg": "http://www.w3.org/2000/svg"}
+          for svg in sorted((root / "assets").rglob("*.svg")):
+              try:
+                  tree = ET.parse(svg)
+                  el = tree.getroot()
+                  if el.find("svg:title", ns) is None:
+                      errors.append(f"Missing <title> in {svg.relative_to(root)}")
+                  if el.find("svg:desc", ns) is None:
+                      errors.append(f"Missing <desc> in {svg.relative_to(root)}")
+                  if not el.attrib.get("width") or not el.attrib.get("height"):
+                      errors.append(f"Missing width/height in {svg.relative_to(root)}")
+              except ET.ParseError as exc:
+                  errors.append(f"Invalid XML in {svg.relative_to(root)}: {exc}")
+
+          # 2. Verify relative links inside Markdown files resolve on disk
+          md_files = [root / "README.md"] + sorted((root / "docs").rglob("*.md"))
+          link_re = re.compile(r'(?:!?\[[^\]]*\]\(([^)]+)\)|(?:src|href)="([^"]+)")')
+          for md in md_files:
+              text = md.read_text(encoding="utf-8")
+              for m in link_re.finditer(text):
+                  target = (m.group(1) or m.group(2)).strip()
+                  if not target or target.startswith(("http://", "https://", "mailto:", "#")):
+                      continue
+                  rel_path = target.split("#", 1)[0]
+                  if not rel_path:
+                      continue
+                  resolved = (md.parent / rel_path).resolve()
+                  if not resolved.exists():
+                      errors.append(f"Broken local reference {target!r} in {md.relative_to(root)}")
+
+          # 3. Verify no emoji characters exist in repo text files (excluding CSV URLs)
+          for path in sorted(root.rglob("*")):
+              if not path.is_file():
+                  continue
+              if ".git" in path.parts or "reports" in path.parts:
+                  continue
+              if path.suffix.lower() not in {".md", ".py", ".yml", ".yaml", ".svg", ".cff"}:
+                  continue
+              text = path.read_text(encoding="utf-8")
+              for ch in text:
+                  cp = ord(ch)
+                  if 0x1F300 <= cp <= 0x1FAFF or 0x2600 <= cp <= 0x27BF or cp == 0xFE0F:
+                      errors.append(f"Disallowed emoji character U+{cp:04X} in {path.relative_to(root)}")
+                      break
+
+          if errors:
+              for err in errors:
+                  print(f"ERROR: {err}", file=sys.stderr)
+              sys.exit(1)
+          print(f"OK: Verified SVGs, local Markdown links across {len(md_files)} docs, and zero-emoji policy.")
+          PY
