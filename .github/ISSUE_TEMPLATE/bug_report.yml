@@ -1,0 +1,42 @@
+name: Bug Report
+description: Report a bug in repository scripts, generated docs, SVG assets, or workflows
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to report bugs in this repository's Python scripts, generated documentation, SVG assets, or GitHub Actions workflows. For bugs inside a third-party n8n workflow, please report directly to the upstream author.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Commands run or steps taken to observe the issue.
+      placeholder: |
+        1. Run `python scripts/build_readme.py`
+        2. Observe error output...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system and Python version.
+      placeholder: "Windows 11 / Python 3.12"
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output or logs
+      render: shell
+    validations:
+      required: false

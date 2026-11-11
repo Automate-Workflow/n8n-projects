@@ -1,0 +1,106 @@
+name: New Project Proposal
+description: Propose a new n8n workflow project to add to data/n8n_list.csv
+title: "[Project]: "
+labels:
+  - new-project
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Propose an open-source or freely importable n8n workflow project. Please check `CONTRIBUTING.md` and `data/README.md` for inclusion criteria before submitting.
+  - type: input
+    id: title
+    attributes:
+      label: Project Title
+      description: Concise title (plain text, no emoji).
+      placeholder: "Invoice Extraction (LlamaParse + OpenAI)"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - WhatsApp
+        - LinkedIn
+        - Resume/HR
+        - Text/Classification
+        - Voice
+        - Image
+        - Computer Vision
+        - Video
+        - Paper
+    validations:
+      required: true
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Difficulty
+      options:
+        - Beginner
+        - Intermediate
+        - Advanced
+    validations:
+      required: true
+  - type: dropdown
+    id: learning_phase
+    attributes:
+      label: Learning Phase
+      options:
+        - Phase 1 - Foundations
+        - Phase 2 - Chatbots and Voice
+        - Phase 3 - Documents, Vision and Data
+        - Phase 4 - Advanced Agents and Integrations
+    validations:
+      required: true
+  - type: input
+    id: tools_and_skills
+    attributes:
+      label: Tools and Skills
+      description: Semicolon-separated list of key nodes, models, or skills.
+      placeholder: "n8n; OpenAI; Google Sheets"
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: One-sentence explanation of what the workflow does. If pointing to a multi-workflow repository, name the target JSON file.
+    validations:
+      required: true
+  - type: dropdown
+    id: source_type
+    attributes:
+      label: Source Type
+      options:
+        - GitHub file
+        - GitHub folder
+        - GitHub repo
+        - GitHub profile (pinned repo)
+        - n8n.io template
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: Project URL
+      description: Direct HTTPS link to the workflow file, repository, or template page.
+      placeholder: "https://github.com/owner/repo"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes and Caveats
+      description: Optional notes such as third-party API terms, privacy considerations, license notes, or multi-workflow navigation hints.
+    validations:
+      required: false
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Confirmation
+      options:
+        - label: I verified the URL loads cleanly and contains no exposed secrets or API keys.
+          required: true
+        - label: The workflow is open source or freely importable and adds clear educational value.
+          required: true

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and Community Discussions
+    url: https://github.com/Automate-Workflow/n8n-projects/discussions
+    about: Ask questions about the learning path, setup, or workflow patterns.
+  - name: Security Vulnerability Reporting
+    url: https://github.com/Automate-Workflow/n8n-projects/blob/main/SECURITY.md
+    about: Report malicious links, leaked upstream credentials, or script security issues privately.

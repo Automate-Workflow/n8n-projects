@@ -1,0 +1,46 @@
+name: Broken Link Report
+description: Report a dead, moved, archived, or misleading project URL in data/n8n_list.csv
+title: "[Broken Link]: "
+labels:
+  - broken-link
+body:
+  - type: input
+    id: project_id
+    attributes:
+      label: Project ID and Title
+      description: Numeric ID and title from data/n8n_list.csv or README.md.
+      placeholder: "ID 14 - Job Application Handling with n8n Forms"
+    validations:
+      required: true
+  - type: input
+    id: broken_url
+    attributes:
+      label: Broken or Outdated URL
+      description: The exact URL currently listed in the directory.
+    validations:
+      required: true
+  - type: dropdown
+    id: failure_mode
+    attributes:
+      label: Observed Problem
+      options:
+        - HTTP 404 Not Found
+        - Repository archived or deleted
+        - Redirects to unrelated destination
+        - Named workflow file missing or renamed
+        - Upstream license or access restriction changed
+    validations:
+      required: true
+  - type: input
+    id: replacement_url
+    attributes:
+      label: Suggested Replacement URL (optional)
+      description: If the workflow moved to a new canonical path, provide it here.
+    validations:
+      required: false
+  - type: textarea
+    id: details
+    attributes:
+      label: Additional Details
+    validations:
+      required: false

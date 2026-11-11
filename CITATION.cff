@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "n8n-projects: Curated n8n Projects to Learn Production Automation"
+message: "If you reference this curated directory in documentation, courses, or research, please cite it using the metadata below."
+type: dataset
+authors:
+  - name: "Automate Workflow"
+    website: "https://github.com/Automate-Workflow"
+repository-code: "https://github.com/Automate-Workflow/n8n-projects"
+url: "https://github.com/Automate-Workflow/n8n-projects"
+abstract: "A structured, CSV-driven directory of 50 curated n8n automation projects organized across nine application categories and four progressive learning phases."
+keywords:
+  - n8n
+  - workflow-automation
+  - ai-agents
+  - whatsapp
+  - linkedin
+  - computer-vision
+  - voice-ai
+  - document-processing
+license: MIT
+version: "1.0.0"
+date-released: "2026-11-11"
